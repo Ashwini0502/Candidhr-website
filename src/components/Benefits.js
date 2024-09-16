@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import "../styles/benifits.css"; 
+import "../styles/benifits.css"; // Import Tailwind CSS or your styles
+
 
 const benefitsData = [
   {
@@ -35,29 +36,49 @@ const cardVariants = {
 };
 
 const Benefits = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center  justify-center bg-black">
+    <section className="min-h-screen flex items-center justify-center bg-black ">
       <div className="w-full max-w-5xl mt-18 p-8">
         <h2 className="text-4xl font-bold text-white mb-12 text-center">
           Why Choose CandidHR?
         </h2>
 
         {/* Benefits Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2  justify-center gap-14">
           {benefitsData.map((benefit, index) => (
             <motion.div
               key={index}
-              className="one-div w-64 h-80 p-6 flex flex-col items-center space-y-4 hover:bg-gray-700 hover:shadow-xl transition-colors duration-300 mx-auto"
+              className={`relative w-64 h-80 flex flex-col items-center justify-center p-6 overflow-hidden rounded-xl bg-gray-700 shadow-lg ${hasScrolled ? 'flip' : ''}`}
               initial="hidden"
               animate="visible"
               custom={index}
               variants={cardVariants}
             >
-              <div className="text-5xl text-blue-400">{benefit.icon}</div>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2 text-white">
-                  {benefit.title}
-                </h3>
+              {/* Blob */}
+          
+
+              {/* Content */}
+              <div className="relative z-20 text-center">
+                <div className="text-5xl text-blue-400">{benefit.icon}</div>
+                <h3 className="text-2xl font-bold mb-2 text-white">{benefit.title}</h3>
                 <p className="text-gray-300">{benefit.description}</p>
               </div>
             </motion.div>

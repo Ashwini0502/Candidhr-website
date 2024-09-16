@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import { FaRocket, FaDatabase, FaChartLine, FaUserCog, FaCode, FaPlug } from "react-icons/fa";
+
 
 const cardVariants = {
   initial: { opacity: 0, y: 20 },
@@ -10,7 +10,7 @@ const cardVariants = {
 
 const imageVariants = {
   initial: { scale: 1 },
-  hover: { scale: 5, opacity: 1 },  // Adjust scale and opacity for the zoom effect
+  hover: { scale: 1.1, opacity: 1 },
 };
 
 const featuresData = [
@@ -48,45 +48,44 @@ const Features = () => {
         <h2 className="text-4xl font-bold text-white mb-12 text-center">
           All-in-One Solution for Smarter, Faster Hiring
         </h2>
-        <div className="relative">
-          <div className="flex flex-col gap-12">
-            {featuresData.map((feature, index) => (
-              <div
-                key={index}
-                className={`w-full flex ${index % 2 === 0 ? 'justify-end' : 'justify-start'} mb-12`}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {featuresData.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="relative w-full max-w-md bg-black p-6 rounded-lg border-2 border-blue-500 shadow-lg flex flex-col items-center transition-transform duration-300"
+              variants={cardVariants}
+              initial="initial"
+              whileInView="animate"
+              whileHover="hover"
+              transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
+            >
+              {/* React Logo */}
+             
+
+              {/* Image */}
+              <motion.div
+                className="relative w-full h-48 overflow-hidden rounded-lg mb-4"
+                variants={imageVariants}
+                initial="initial"
+                whileHover="hover"
               >
-                <motion.div
-                  className="relative bg-black p-6 rounded-lg border-2 border-blue-400 shadow-lg flex items-center space-x-3 transition-transform duration-300"
-                  variants={cardVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  whileHover="hover"
-                  transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
-                >
-                  <motion.div
-                    className="relative w-24 h-24 overflow-hidden rounded-lg"
-                    variants={imageVariants}
-                    initial="initial"
-                    whileHover="hover"
-                  >
-                    <motion.img
-                      src={feature.image}
-                      alt={feature.heading}
-                      className="w-full h-full object-cover"
-                      initial={{ opacity: 1 }}
-                      whileHover={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{feature.heading}</h3>
-                    <p className="text-gray-300 text-sm">{feature.text}</p>
-                  </div>
-                </motion.div>
+                <motion.img
+                  src={feature.image}
+                  alt={feature.heading}
+                  className="w-full h-full object-cover"
+                  initial={{ opacity: 1 }}
+                  whileHover={{ opacity: 0.8 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </motion.div>
+
+              {/* Content */}
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-white mb-2">{feature.heading}</h3>
+                <p className="text-gray-300 text-sm">{feature.text}</p>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

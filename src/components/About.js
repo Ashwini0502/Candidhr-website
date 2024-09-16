@@ -4,8 +4,8 @@ import aiImage from "../assest/Logo_on_colourB2.jpg"; // Replace with your actua
 
 const About = () => {
   return (
-    <section className="min-h-screen p-8 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-pink-400 mb-6">About Diacto and candidhr</h2>
+    <section className="min-h-screen p-8 flex flex-col items-center bg-black text-white">
+      <h2 className="text-3xl font-bold text-white mb-6">About Diacto and candidhr</h2>
       <div className="flex flex-col lg:flex-row items-center justify-between w-full">
         {/* Image Div */}
         <motion.div
