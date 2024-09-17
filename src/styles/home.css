@@ -5,6 +5,14 @@
   
 }
 
+.glass{
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.507);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
 .cube {
   position: absolute;
   top: 80vh;
@@ -16,6 +24,8 @@
   transform: scale(0) rotate(0deg) translate(-50%, -50%);
   animation: cube 12s ease-in forwards infinite;
 }
+
+
 
 .cube:nth-child(2n) {
   border-color: #081b41;

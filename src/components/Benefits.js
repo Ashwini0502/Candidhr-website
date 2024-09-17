@@ -58,6 +58,7 @@ const Benefits = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -89,7 +90,7 @@ const Benefits = () => {
   };
 
   return (
-    <section className="relative  flex items-center justify-center bg-gray-800 py-16">
+    <section className="relative  flex items-center justify-center bg-black py-16">
       {/* Animated Background Circles */}
       <ul className="circles">
         <li></li>
@@ -107,7 +108,7 @@ const Benefits = () => {
       <div className="w-full max-w-4xl px-8 relative z-10">
         <h2 className="text-4xl font-bold text-white mb-12 text-center">
           Why Choose{" "}
-          <span className="bg-clip-text text-transparent py-5 bg-gradient-to-r from-pink-300 via-purple-400 to-blue-800">
+          <span className="bg-clip-text text-transparent py-5 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-800">
             CandidHR
           </span>
           ?
