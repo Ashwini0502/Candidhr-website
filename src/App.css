@@ -28,7 +28,7 @@ body {
 }
 
 .gallery p {
-	font-size:clamp(1.4em, 0.5vw, 2.5em);
+	/*font-size:clamp(1.4em, 0.5vw, 2.5em); */
 	line-height:1.4;
   color:rgb(177, 171, 171);
   text-align: center;
@@ -74,11 +74,12 @@ body {
   
   color: white;
   text-align: center;
-  text-shadow: 
-      0 0 5px #00d5ff,   /* Blue shadow */
-      0 0 10px #b84dff,   /* Purple shadow */
-      0 0 20px #ff61bc,   /* Pink shadow */
-      0 0 25px #ffb740;   /* Yellow shadow */
+  /*text-shadow: 
+      0 0 5px #00d5ff,  
+      0 0 10px #b84dff,   
+      0 0 20px #ff61bc,   
+      0 0 25px #ffb740;   
+ */
 }
 
 .desktopPhotos {
@@ -87,8 +88,9 @@ body {
 	border-radius:20px;
 	position:relative;
 	overflow:hidden;
-  box-shadow: 
+ /* box-shadow: 
       10px 10px 50px #c0bada;
+	  */
 }
 
 .desktopPhoto {

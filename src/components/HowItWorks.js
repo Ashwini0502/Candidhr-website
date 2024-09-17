@@ -73,8 +73,8 @@ const HowItWorks = () => {
                             <p>Set up personality screenings with our video/audio interview tools and evaluate technical tests, all within the platform.</p>
                         </div>
                         <div className="desktopContentSection">
-                            <h1>Conduct Assessments & Interviews</h1>
-                            <p>Set up personality screenings with our video/audio interview tools and evaluate technical tests, all within the platform.</p>
+                            <h1>AI Screening & Ranking</h1>
+                            <p>The AI matches resumes with job descriptions and ranks candidates, providing a shortlist in seconds.</p>
                         </div>
                     </div>
                 </div>

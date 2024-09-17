@@ -118,9 +118,7 @@ const Home = () => {
       
       {/* Key Highlights Section */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        
       >
        <HowItWorks/>
       </motion.div>

@@ -76,7 +76,7 @@ const AboutUs = () => {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl mb-4 md:mb-6"
+            className="text-lg md:text-xl mb-4 md:mb-6 text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4 }}
@@ -85,10 +85,7 @@ const AboutUs = () => {
           </motion.p>
 
           <motion.h2
-            className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text"
-            style={{
-              backgroundImage: 'linear-gradient(90deg, #E0ADD0, #6867AC, #B6E0ED)',
-            }}
+            className="text-2xl md:text-3xl font-semibold mb-4 text-transparent bg-clip-text text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.6 }}
@@ -97,7 +94,7 @@ const AboutUs = () => {
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl mb-6"
+            className="text-lg md:text-xl mb-6 text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.8 }}
