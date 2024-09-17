@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Features from "./Features";
 import Benefits from "./Benefits";
-
+import HowItWorks from "./HowItWorks";
 import Contact from "./Contact";
-// import runMatter from "./MatterAnimation";
+
 import KeyHighlights from "./KeyHighlights";
-import video from "../assest/video1.mp4"
+import video from "../assets/video1.mp4"
 
 const Home = () => {
   const videoRef = useRef(null);
@@ -71,30 +71,28 @@ const Home = () => {
 
         {/* Call to Action Buttons */}
         <div className="cta mt-8 space-x-4">
-          <motion.button
-            className="bg-blue-700 hover:bg-pink-500 text-white px-8 py-4 text-xl font-semibold rounded-lg hover:scale-105 transition-transform transform"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.1,
-              boxShadow: "0px 4px 10px rgba(255, 105, 180, 0.5)",
-            }}
+        <motion.a
+            href="#contact"
+            className="inline-block px-6 py-3 text-lg font-semibold rounded-full text-white bg-gradient-to-r from-gray-800 to-gray-600 hover:from-gray-700 hover:to-gray-500 transition-all"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 2 }}
           >
-            Request a Demo
-          </motion.button>
-          <motion.button
-            className="bg-pink-500 hover:bg-blue-700 text-white px-8 py-4 text-xl font-semibold rounded-lg hover:scale-105 transition-transform transform"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
-            whileHover={{
-              scale: 1.1,
-              boxShadow: "0px 4px 10px rgba(100, 149, 237, 0.5)",
-            }}
-          >
-            Contact Us
-          </motion.button>
+            Request a demo
+          </motion.a>
+          <motion.a
+  href="#contact"
+  className="inline-block px-6 py-3 text-lg font-semibold rounded-full text-white bg-[#0056b3] hover:bg-[#007BFF] transition-all"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 2 }}
+>
+  Contact Us
+</motion.a>
+
+
+
+
         </div>
 
         {/* Video with border shadow and hover effect */}
@@ -117,8 +115,16 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
-
+      
       {/* Key Highlights Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+       <HowItWorks/>
+      </motion.div>
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

@@ -1,40 +1,34 @@
-/* Animation Keyframes */
-@keyframes blob-bounce {
-    0% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
-    }
-  
-    25% {
-      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-    }
-  
-    50% {
-      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-    }
-  
-    75% {
-      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-    }
-  
-    100% {
-      transform: translate(-100%, -100%) translate3d(0, 0, 0);
-    }
-  }
-  keyframes flip {
-    from {
-      transform: rotateY(0);
-    }
-    to {
-      transform: rotateY(180deg);
-    }
-  }
-  
-  .flip {
-    animation: flip 1s forwards;
-  }
-  
-  /* Animation Class */
-  .animate-blob {
-    animation: blob-bounce 5s infinite ease;
-  }
-  
+/* Ensure this CSS is included to handle any specific custom styles or layout adjustments */
+.slick-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide .slick-slide {
+  margin: 0 10px; /* Adjust margin as needed */
+}
+
+.custom-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.custom-arrow .arrow-icon {
+  font-size: 20px;
+  color: #fff;
+}
+
+.custom-arrow.slick-prev {
+  left: -50px;
+}
+
+.custom-arrow.slick-next {
+  right: -50px;
+}
