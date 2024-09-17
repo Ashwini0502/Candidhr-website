@@ -1,120 +1,147 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FaBriefcase, FaRobot, FaHandshake, FaChartLine } from "react-icons/fa";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../styles/benifits.css"; // Adjust the path as necessary
+import "../styles/benifits.css";
 
+// Benefits Data
 const benefitsData = [
   {
     title: "Reduce Manual Effort",
     description:
       "Automate repetitive tasks and reduce manual effort by 90%, allowing your team to focus on more important work.",
-    icon: "💼",
+    icon: <FaBriefcase />,
   },
   {
     title: "AI-Powered Insights",
     description:
       "Leverage AI-powered insights to ensure you choose the top candidates for your open positions.",
-    icon: "🤖",
+    icon: <FaRobot />,
   },
   {
     title: "Team Collaboration",
     description:
       "Enhanced collaboration tools to seamlessly integrate your hiring team’s feedback and decisions.",
-    icon: "🤝",
+    icon: <FaHandshake />,
   },
   {
     title: "Scalable Solutions",
     description:
       "Our platform scales with your hiring needs, whether you're hiring for 10 or 10,000 roles.",
-    icon: "📈",
+    icon: <FaChartLine />,
   },
+  // Add more data if needed
 ];
 
+// Framer Motion Variants
 const cardVariants = {
-  hidden: { opacity: 0, y: -50 },
+  hidden: { opacity: 0, y: 50, rotateY: 90 },
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.2, duration: 0.5 },
+    rotateY: 0,
+    transition: { delay: i * 0.2, duration: 0.8, ease: "easeInOut" },
   }),
 };
 
 const Benefits = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
+  // Handle Scroll Event to Trigger Animation
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setHasScrolled(true);
-      } else {
-        setHasScrolled(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Slider settings for react-slick
+  // Slider settings
   const sliderSettings = {
-    dots: true,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: "40px",
-    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          centerPadding: "30px",
+          slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          centerPadding: "20px",
+          slidesToScroll: 1,
         },
       },
     ],
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-black">
-      <div className="w-full max-w-5xl mt-18">
+    <section className="relative  flex items-center justify-center bg-black py-16">
+      {/* Animated Background Circles */}
+      <ul className="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+      <div className="w-full max-w-4xl px-8 relative z-10">
         <h2 className="text-4xl font-bold text-white mb-12 text-center">
-          Why Choose CandidHR?
+          Why Choose{" "}
+          <span className="bg-clip-text text-transparent py-5 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-800">
+            CandidHR
+          </span>
+          ?
         </h2>
 
-        {/* Benefits Cards */}
-        <Slider {...sliderSettings} className="px-4">
-          {benefitsData.map((benefit, index) => (
-            <motion.div
-              key={index}
-              className={`relative w-64 h-96 flex flex-col items-center justify-center p-6 mx-4 my-2 overflow-hidden rounded-xl bg-gray-700 bg-opacity-70 shadow-lg ${hasScrolled ? "flip" : ""}`}
-              initial="hidden"
-              animate="visible"
-              custom={index}
-              variants={cardVariants}
-            >
-              {/* Content */}
-              <div className="relative z-20 text-center flex flex-col items-center justify-center h-full">
-                <div className="text-5xl text-blue-400 mb-4">{benefit.icon}</div> {/* Icon */}
-                <h3 className="text-2xl font-bold mb-2 text-white">{benefit.title}</h3> {/* Title */}
-                <p className="text-gray-300">{benefit.description}</p> {/* Description */}
-              </div>
-            </motion.div>
-          ))}
-        </Slider>
+        {/* Benefits Slider */}
+        <div className="relative">
+          <Slider {...sliderSettings}>
+            {benefitsData.map((benefit, index) => (
+              <motion.div
+                key={index}
+                className="relative w-72 h-96 flex flex-col items-center justify-center p-6 rounded-xl bg-gray-950 shadow-2xl hover:shadow-blue-500/40 text-center " 
+                initial="hidden"
+                animate={hasScrolled ? "visible" : ""}
+                custom={index}
+                variants={cardVariants}
+              >
+                {/* React Icon */}
+                <div className="flex items-center justify-center text-6xl text-blue-700 mb-14 mt-8">
+                  {benefit.icon}
+                </div>
+
+                {/* Content */}
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-300">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </Slider>
+        </div>
       </div>
     </section>
   );

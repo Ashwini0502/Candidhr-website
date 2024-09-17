@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Footer from './Footer';
+
 
 const AboutUs = () => {
   // Define the image animation
@@ -114,7 +114,7 @@ const AboutUs = () => {
           </motion.a>
         </div>
       </motion.div>
-      <Footer/>
+    
     </div>
   );
 };

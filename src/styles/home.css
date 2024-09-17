@@ -1,127 +1,68 @@
+.hero {
+  position: relative;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap");
-
-body {
-  background: black;
-  height: 100vh;
-  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-  font-family: "DM Mono", monospace;
-  font-weight: 300;
   overflow: hidden;
-  color: white;
-  text-align: center;
+  
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 0.2em;
+.glass{
+  background: rgba(255, 255, 255, 0.075);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.507);
+  backdrop-filter: blur(3.6px);
+  -webkit-backdrop-filter: blur(3.6px);
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
-
-h2 {
-  font-size: 2em;
-}
-
-.main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.arrow {
-  z-index: 1000;
-  opacity: 0.5;
+.cube {
   position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #003298;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
 }
 
-.arrow--top {
-  top: 0;
-  left: -5em;
+
+
+.cube:nth-child(2n) {
+  border-color: #081b41;
+}
+.cube:nth-child(2) {
+  animation-delay: 1s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 3s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
 }
 
-.arrow--bottom {
-  bottom: 0;
-  right: 3em;
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
 }
-
-.video-container {
-  width: 80%;
-  max-width: 800px;
-}
-
-.video-content {
-  width: 100%;
-  height: auto;
-}
-
-.dotted-circle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0.3;
-  animation: rotation 38s linear infinite;
-}
-
-.geo-arrow {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-}
-
-.item-to {
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  transform-origin: bottom;
-}
-
-.bounce-1 {
-  animation-name: bounce-1;
-  animation-timing-function: ease;
-}
-
-.bounce-2 {
-  animation-name: bounce-2;
-  animation-timing-function: ease;
-}
-
-.bounce-3 {
-  animation-name: bounce-3;
-  animation-timing-function: ease;
-}
-
-@keyframes bounce-1 {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(50px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes bounce-2 {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes bounce-3 {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(30px); }
-  100% { transform: translateY(0); }
-}
-
-.draw-in {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 10;
-  animation: draw 15s ease-in-out alternate infinite;
-}
-
-@keyframes draw {
-  from { stroke-dashoffset: 1000; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes rotation {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-

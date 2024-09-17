@@ -8,7 +8,11 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row max-w-6xl w-full mt-16 ">
         {/* Contact Details Section */}
         <div className="lg:w-1/2 p-8  bg-opacity-25 rounded-lg shadow-lg">
+<<<<<<< HEAD
           <h2 className="text-4xl font-bold mb-6 ">Contact Us</h2>
+=======
+          <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent py-5 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500">Contact Us</h2>
+>>>>>>> 3f1ead13fe4cd3272c236dddc730c4494c1c7c84
           <p className="mb-6 text-gray-300">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Reach out to us with any inquiries.
           </p>
@@ -28,10 +32,13 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Social Media Section */}
+        
           <div className="mt-10">
+<<<<<<< HEAD
           
 
+=======
+>>>>>>> 3f1ead13fe4cd3272c236dddc730c4494c1c7c84
             <div className="flex space-x-6 mt-8">
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-500">
                 <FaFacebook size={24} />

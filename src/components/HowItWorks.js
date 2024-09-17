@@ -54,10 +54,10 @@ const HowItWorks = () => {
 
     return (
         <section className='bg-black text-center'>
-              <h2 className='text-4xl font-bold text-white text-center '>How it Works</h2>
+              <h2 className='text-4xl font-bold text-white text-center '>How it <spna className="bg-clip-text text-transparent py-5 bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500">Works</spna></h2>
             <div className="gallery">
                 <div className="left">
-                    <div className="desktopContent">
+                    <div className="  desktopContent">
 
                         <div className="desktopContentSection">
                             <h1 >

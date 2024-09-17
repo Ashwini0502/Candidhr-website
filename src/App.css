@@ -28,7 +28,11 @@ body {
 }
 
 .gallery p {
+<<<<<<< HEAD
 	/*font-size:clamp(1.4em, 0.5vw, 2.5em); */
+=======
+	/* font-size:clamp(1.4em, 0.5vw, 2.5em); */
+>>>>>>> 3f1ead13fe4cd3272c236dddc730c4494c1c7c84
 	line-height:1.4;
   color:rgb(177, 171, 171);
   text-align: center;
@@ -68,18 +72,26 @@ body {
 
 .desktopContentSection h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   
   
   color: white;
   text-align: center;
+<<<<<<< HEAD
   /*text-shadow: 
       0 0 5px #00d5ff,  
       0 0 10px #b84dff,   
       0 0 20px #ff61bc,   
       0 0 25px #ffb740;   
  */
+=======
+  /* text-shadow:  */
+      /* 0 0 5px #00d5ff,  
+      0 0 10px #b84dff,   
+      0 0 20px #ff61bc,   
+      0 0 25px #ffb740;   */
+>>>>>>> 3f1ead13fe4cd3272c236dddc730c4494c1c7c84
 }
 
 .desktopPhotos {
@@ -88,9 +100,14 @@ body {
 	border-radius:20px;
 	position:relative;
 	overflow:hidden;
+<<<<<<< HEAD
  /* box-shadow: 
       10px 10px 50px #c0bada;
 	  */
+=======
+  /* box-shadow: 
+      10px 10px 50px #c0bada; */
+>>>>>>> 3f1ead13fe4cd3272c236dddc730c4494c1c7c84
 }
 
 .desktopPhoto {
