@@ -46,7 +46,7 @@ const Navbar = () => {
             isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
           }`}
         >
-          {["Home", "About", "Contact"].map((item, index) => (
+          {["Home", "About", "Features"].map((item, index) => (
             <li key={index} className=" py-2 lg:py-0">
               <motion.div
                 whileHover={{
